@@ -10,7 +10,7 @@ class SmLessonFilter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100.0,
-      width: 60,
+      width: 55,
       padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
         color: Colors.grey[200],

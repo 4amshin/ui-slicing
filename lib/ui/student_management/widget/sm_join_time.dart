@@ -8,8 +8,8 @@ class SmJoinTime extends StatelessWidget {
     return Row(
       children: [
         Container(
-          height: 100.0,
-          width: 6,
+          height: 90,
+          width: 5,
           decoration: const BoxDecoration(
             color: Color(0xffc5cce9),
             borderRadius: BorderRadius.all(

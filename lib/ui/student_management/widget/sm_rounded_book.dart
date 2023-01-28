@@ -7,8 +7,8 @@ class SmRoundedBook extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 50,
-      width: 50,
+      height: 45,
+      width: 45,
       padding: const EdgeInsets.all(10),
       decoration: const BoxDecoration(
         color: Colors.white,

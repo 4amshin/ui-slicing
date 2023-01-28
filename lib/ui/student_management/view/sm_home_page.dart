@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:percent_indicator/percent_indicator.dart';
+import 'package:ui_slicing/ui/student_management/widget/sm_app_bar.dart';
+import 'package:ui_slicing/ui/student_management/widget/sm_bottom_content.dart';
 import 'package:ui_slicing/ui/student_management/widget/sm_join_time.dart';
 import 'package:ui_slicing/ui/student_management/widget/sm_lesson_filter.dart';
+import 'package:ui_slicing/ui/student_management/widget/sm_lesson_item.dart';
+import 'package:ui_slicing/ui/student_management/widget/sm_lesson_list.dart';
+import 'package:ui_slicing/ui/student_management/widget/sm_mid_content.dart';
+import 'package:ui_slicing/ui/student_management/widget/sm_sign_out.dart';
+import 'package:ui_slicing/ui/student_management/widget/sm_top_content.dart';
 import 'package:ui_slicing/ui/student_management/widget/sm_top_profile_pic.dart';
 import 'package:ui_slicing/ui/student_management/widget/sm_user_status.dart';
 
@@ -14,47 +20,23 @@ class SmHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: const Icon(
-          Icons.arrow_back_ios,
-          color: Color(0xff1339a4),
-          size: 20,
-        ),
-        actions: const [
-          Padding(
-            padding: EdgeInsets.only(right: 20),
-            child: Icon(
-              Icons.more_horiz,
-              color: Color(0xff1339a4),
-              size: 25,
-            ),
-          ),
-        ],
-      ),
       body: SafeArea(
-        minimum: const EdgeInsets.all(20),
+        minimum: const EdgeInsets.symmetric(
+          vertical: 20,
+          horizontal: 25,
+        ),
         child: Column(
-          children: [
-            Row(
-              children: const [
-                SmTopProfilePic(),
-                SizedBox(width: 65.0),
-                SmJoinTime(),
-              ],
-            ),
-            const SizedBox(height: 20.0),
-            Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 20,
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const SmUserStatus(),
-                  const SmLessonFilter(),
-                ],
-              ),
-            ),
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: const [
+            SmAppBar(),
+            SizedBox(height: 20),
+            SmTopContent(),
+            SizedBox(height: 20),
+            SmMidContent(),
+            SizedBox(height: 30),
+            SmBottomContent(),
+            SizedBox(height: 45.0),
+            SmSignOut(),
           ],
         ),
       ),

@@ -12,7 +12,7 @@ class SmUserStatus extends StatelessWidget {
           "Rely",
           style: TextStyle(
             fontSize: 35.0,
-            fontWeight: FontWeight.bold,
+            fontWeight: FontWeight.w900,
             color: Color(0xff1339a4),
           ),
         ),

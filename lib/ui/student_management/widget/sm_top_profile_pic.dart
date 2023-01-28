@@ -9,7 +9,7 @@ class SmTopProfilePic extends StatelessWidget {
     return Stack(
       children: [
         CircularPercentIndicator(
-          radius: 63.0,
+          radius: 53.0,
           lineWidth: 4.5,
           circularStrokeCap: CircularStrokeCap.round,
           percent: 0.65,
@@ -17,14 +17,14 @@ class SmTopProfilePic extends StatelessWidget {
           progressColor: const Color(0xffffb8b2),
         ),
         const Positioned(
-          top: 13,
-          left: 13,
+          top: 10,
+          left: 10,
           child: CircleAvatar(
             backgroundColor: Color(0xffffb8b2),
             backgroundImage: AssetImage(
               'assets/images/student_management/profile.png',
             ),
-            radius: 50,
+            radius: 43,
           ),
         ),
       ],
