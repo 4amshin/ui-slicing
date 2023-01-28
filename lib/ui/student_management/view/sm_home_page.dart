@@ -1,4 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:percent_indicator/percent_indicator.dart';
+import 'package:ui_slicing/ui/student_management/widget/sm_join_time.dart';
+import 'package:ui_slicing/ui/student_management/widget/sm_lesson_filter.dart';
+import 'package:ui_slicing/ui/student_management/widget/sm_top_profile_pic.dart';
+import 'package:ui_slicing/ui/student_management/widget/sm_user_status.dart';
+
+import '../widget/sm_rounded_book.dart';
 
 class SmHomePage extends StatelessWidget {
   const SmHomePage({Key? key}) : super(key: key);
@@ -28,47 +36,24 @@ class SmHomePage extends StatelessWidget {
         child: Column(
           children: [
             Row(
-              children: [
-                const CircleAvatar(
-                  backgroundColor: Color(0xffffb8b2),
-                  backgroundImage: AssetImage(
-                    'assets/images/student_management/profile.png',
-                  ),
-                  radius: 50,
-                ),
-                const SizedBox(width: 80.0),
-                Container(
-                  height: 100.0,
-                  width: 6,
-                  decoration: const BoxDecoration(
-                    color: Color(0xffc5cce9),
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(
-                        16.0,
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(width: 25.0),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      "Joined",
-                      style: TextStyle(fontSize: 12, color: Color(0xffc0c3c8)),
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      "7 mon ago",
-                      style: TextStyle(
-                        color: Color(0xff1339a4),
-                        fontSize: 14,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ],
-                ),
+              children: const [
+                SmTopProfilePic(),
+                SizedBox(width: 65.0),
+                SmJoinTime(),
               ],
+            ),
+            const SizedBox(height: 20.0),
+            Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const SmUserStatus(),
+                  const SmLessonFilter(),
+                ],
+              ),
             ),
           ],
         ),
