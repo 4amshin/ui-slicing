@@ -10,14 +10,14 @@ class SmSignOut extends StatelessWidget {
       children: [
         SvgPicture.asset(
           'assets/icons/student_management/sign-out.svg',
-          height: 18,
+          height: 16,
           color: const Color(0xffffb8b2),
         ),
         const SizedBox(width: 10),
         const Text(
           "Sign Out",
           style: TextStyle(
-            fontSize: 14.0,
+            fontSize: 13.0,
             color: Color(0xff1339a4),
             fontWeight: FontWeight.bold,
           ),

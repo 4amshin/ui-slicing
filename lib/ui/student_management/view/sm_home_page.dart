@@ -1,18 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:ui_slicing/ui/student_management/widget/sm_app_bar.dart';
-import 'package:ui_slicing/ui/student_management/widget/sm_bottom_content.dart';
-import 'package:ui_slicing/ui/student_management/widget/sm_join_time.dart';
-import 'package:ui_slicing/ui/student_management/widget/sm_lesson_filter.dart';
-import 'package:ui_slicing/ui/student_management/widget/sm_lesson_item.dart';
-import 'package:ui_slicing/ui/student_management/widget/sm_lesson_list.dart';
-import 'package:ui_slicing/ui/student_management/widget/sm_mid_content.dart';
-import 'package:ui_slicing/ui/student_management/widget/sm_sign_out.dart';
-import 'package:ui_slicing/ui/student_management/widget/sm_top_content.dart';
-import 'package:ui_slicing/ui/student_management/widget/sm_top_profile_pic.dart';
-import 'package:ui_slicing/ui/student_management/widget/sm_user_status.dart';
-
-import '../widget/sm_rounded_book.dart';
+import 'package:ui_slicing/ui/student_management/widget/home_page_widget/sm_home_app_bar.dart';
+import 'package:ui_slicing/ui/student_management/widget/home_page_widget/sm_home_tab_bar.dart';
 
 class SmHomePage extends StatelessWidget {
   const SmHomePage({Key? key}) : super(key: key);
@@ -20,23 +8,47 @@ class SmHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xff1339a4),
       body: SafeArea(
-        minimum: const EdgeInsets.symmetric(
-          vertical: 20,
-          horizontal: 25,
-        ),
+        minimum: const EdgeInsets.all(25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            SmAppBar(),
-            SizedBox(height: 20),
-            SmTopContent(),
-            SizedBox(height: 20),
-            SmMidContent(),
-            SizedBox(height: 30),
-            SmBottomContent(),
-            SizedBox(height: 45.0),
-            SmSignOut(),
+          children: [
+            const SmHomeAppBar(),
+            const SizedBox(
+              height: 35.0,
+            ),
+            const Text(
+              "Category",
+              style: TextStyle(
+                fontSize: 20.0,
+                color: Colors.white,
+                letterSpacing: 1.5,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            const Text(
+              "Choose your desire suject!",
+              style: TextStyle(
+                fontSize: 15.0,
+                color: Colors.white54,
+              ),
+            ),
+            const SizedBox(
+              height: 25.0,
+            ),
+            const SmHomeTabBar(),
+            const SizedBox(height: 30.0),
+            Container(
+              height: MediaQuery.of(context).size.height / 2,
+              decoration: const BoxDecoration(
+                color: Colors.blueAccent,
+                borderRadius: BorderRadius.only(
+                  topLeft: Radius.circular(25),
+                  topRight: Radius.circular(25),
+                ),
+              ),
+            ),
           ],
         ),
       ),

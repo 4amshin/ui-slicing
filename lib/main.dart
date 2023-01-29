@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ui_slicing/test_site.dart';
 import 'ui/student_management/view/sm_home_page.dart';
 
 void main() {
