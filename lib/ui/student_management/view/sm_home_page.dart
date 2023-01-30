@@ -9,48 +9,89 @@ class SmHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xff1339a4),
-      body: SafeArea(
-        minimum: const EdgeInsets.all(25),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SmHomeAppBar(),
-            const SizedBox(
-              height: 35.0,
-            ),
-            const Text(
-              "Category",
-              style: TextStyle(
-                fontSize: 20.0,
-                color: Colors.white,
-                letterSpacing: 1.5,
-                fontWeight: FontWeight.bold,
+      body: Stack(
+        children: [
+          Positioned(
+            top: 0,
+            left: 0,
+            right: 0,
+            child: Padding(
+              padding: const EdgeInsets.all(25),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: const [
+                  SmHomeAppBar(),
+                  SizedBox(
+                    height: 35.0,
+                  ),
+                  Text(
+                    "Category",
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      color: Colors.white,
+                      letterSpacing: 1.5,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    "Choose your desire suject!",
+                    style: TextStyle(
+                      fontSize: 15.0,
+                      color: Colors.white54,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 25.0,
+                  ),
+                  SmHomeTabBar(),
+                  SizedBox(height: 30.0),
+                ],
               ),
             ),
-            const Text(
-              "Choose your desire suject!",
-              style: TextStyle(
-                fontSize: 15.0,
-                color: Colors.white54,
-              ),
-            ),
-            const SizedBox(
-              height: 25.0,
-            ),
-            const SmHomeTabBar(),
-            const SizedBox(height: 30.0),
-            Container(
-              height: MediaQuery.of(context).size.height / 2,
+          ),
+          Positioned(
+            bottom: 0,
+            left: 0,
+            right: 0,
+            child: Container(
+              height: 450,
+              padding: const EdgeInsets.all(25),
               decoration: const BoxDecoration(
-                color: Colors.blueAccent,
+                color: Colors.white,
                 borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(25),
-                  topRight: Radius.circular(25),
+                  topLeft: Radius.circular(35),
+                  topRight: Radius.circular(35),
                 ),
               ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Text(
+                        "Your Courses",
+                        style: TextStyle(
+                          fontSize: 15,
+                          color: Color(0xff1339a4),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      Text(
+                        "View All",
+                        style: TextStyle(
+                          fontSize: 13,
+                          color: Color(0xfff1d0d7),
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
