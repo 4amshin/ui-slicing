@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:ui_slicing/ui/student_management/widget/home_page_widget/sm_home_app_bar.dart';
 import 'package:ui_slicing/ui/student_management/widget/home_page_widget/sm_home_tab_bar.dart';
+
+import '../model/lesson_item.dart';
 
 class SmHomePage extends StatelessWidget {
   const SmHomePage({Key? key}) : super(key: key);
@@ -68,7 +71,7 @@ class SmHomePage extends StatelessWidget {
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
+                    children: [
                       Text(
                         "Your Courses",
                         style: TextStyle(
@@ -87,6 +90,78 @@ class SmHomePage extends StatelessWidget {
                       ),
                     ],
                   ),
+                  const SizedBox(height: 10.0),
+                  Expanded(
+                    child: GridView.count(
+                      crossAxisCount: 2,
+                      childAspectRatio: 0.78,
+                      children: List.generate(lessons.length, (index) {
+                        LessonItem item = lessons[index];
+                        return Container(
+                          padding: const EdgeInsets.all(20),
+                          margin: const EdgeInsets.all(6),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: item.backgroundColor,
+                          ),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Center(
+                                child: CircleAvatar(
+                                  radius: 28,
+                                  backgroundColor: Colors.white,
+                                  child: SvgPicture.asset(
+                                    'assets/icons/student_management/${item.iconAsset}',
+                                    height: 25,
+                                  ),
+                                ),
+                              ),
+                              const SizedBox(height: 15.0),
+                              Text(
+                                item.title!,
+                                style: TextStyle(
+                                  fontSize: 15,
+                                  color: item.titleColor ?? Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const SizedBox(height: 3.0),
+                              Text(
+                                item.subTitle!,
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  color: item.subTitleColor ?? Colors.white,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 10,
+                              ),
+                              Container(
+                                height: 7,
+                                decoration: const BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(16.0),
+                                  ),
+                                ),
+                                child: Container(
+                                  width: item.progress?.toDouble(),
+                                  decoration: BoxDecoration(
+                                    color: item.progressBar,
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(16.0),
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        );
+                      }),
+                    ),
+                  )
                 ],
               ),
             ),
