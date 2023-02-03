@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../theme/color_theme.dart';
 import 'sm_lesson_list.dart';
@@ -10,17 +11,32 @@ class SmBottomContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: const [
-        Text(
+      children: [
+        const Text(
           "Complete Profile",
           style: TextStyle(
             fontSize: 15,
             color: smPrimary,
             fontWeight: FontWeight.bold,
           ),
-        ),
-        SizedBox(height: 15),
-        SmLessonList(),
+        ).animate().fade().slideY(
+              begin: -0.5,
+              duration: 850.ms,
+              curve: Curves.easeInOutCubic,
+            ),
+        const SizedBox(height: 15),
+        const SmLessonList()
+            .animate()
+            .fade()
+            .slideX(
+              begin: -0.5,
+              duration: 850.ms,
+              curve: Curves.easeInOutCubic,
+            )
+            .shimmer(
+              delay: 850.ms,
+              duration: 850.ms,
+            ),
       ],
     );
   }

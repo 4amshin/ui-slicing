@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'sm_rounded_book.dart';
@@ -20,13 +21,22 @@ class SmLessonFilter extends StatelessWidget {
       ),
       child: Column(
         children: [
-          const SmRoundedBook(),
+          const SmRoundedBook().animate().fade().slideY(
+                begin: 0.15,
+                delay: 200.ms,
+                duration: 650.ms,
+                curve: Curves.easeInOutCubic,
+              ),
           const SizedBox(height: 10.0),
           SvgPicture.asset(
             'assets/icons/student_management/filter.svg',
             height: 20,
             color: Colors.grey[600],
-          ),
+          ).animate().fade(duration: 850.ms).slideY(
+                begin: 0.1,
+                duration: 850.ms,
+                curve: Curves.easeInOutCubic,
+              ),
         ],
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../theme/color_theme.dart';
 
@@ -17,7 +18,11 @@ class SmUserStatus extends StatelessWidget {
             fontWeight: FontWeight.w900,
             color: smPrimary,
           ),
-        ),
+        ).animate().fade().slideX(
+              begin: -1,
+              duration: 850.ms,
+              curve: Curves.easeInCubic,
+            ),
         Text(
           "Student",
           style: TextStyle(
@@ -25,7 +30,11 @@ class SmUserStatus extends StatelessWidget {
             fontWeight: FontWeight.w500,
             color: Colors.grey[600],
           ),
-        ),
+        ).animate().fade().slideX(
+            begin: -1,
+            delay: 150.ms,
+            duration: 650.ms,
+            curve: Curves.easeInCubic),
       ],
     );
   }

@@ -34,14 +34,11 @@ class SmHomeAppBar extends StatelessWidget {
               MaterialPageRoute(builder: (context) => const SmUserDetail()),
             );
           },
-          child: const Hero(
-            tag: 'profile',
-            child: CircleAvatar(
-              radius: 18,
-              backgroundColor: Color(0xffffb8b2),
-              backgroundImage: AssetImage(
-                'assets/images/student_management/profile.png',
-              ),
+          child: const CircleAvatar(
+            radius: 18,
+            backgroundColor: Color(0xffffb8b2),
+            backgroundImage: AssetImage(
+              'assets/images/student_management/profile.png',
             ),
           ),
         ),

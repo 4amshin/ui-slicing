@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:ui_slicing/ui/student_management/widget/home_page_widget/sm_home_item_card.dart';
 
 import '../../model/lesson_item.dart';
@@ -46,7 +46,10 @@ class SmHomeLessonList extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
+            ).animate().fade(duration: 850.ms).slideY(
+                  begin: -0.5,
+                  curve: Curves.easeInOutCubic,
+                ),
             const SizedBox(height: 10.0),
             Expanded(
               child: GridView.count(
@@ -64,10 +67,13 @@ class SmHomeLessonList extends StatelessWidget {
                     subTitleColor: item.subTitleColor,
                     progressPercent: item.progress,
                     progressColor: item.progressBarColor,
-                  );
+                  ).animate().fade(duration: 850.ms).slideY(
+                        begin: 0.5,
+                        curve: Curves.easeInOutCubic,
+                      );
                 }),
               ),
-            )
+            ),
           ],
         ),
       ),

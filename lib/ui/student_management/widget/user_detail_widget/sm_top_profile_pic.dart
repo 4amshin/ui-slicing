@@ -21,15 +21,12 @@ class SmTopProfilePic extends StatelessWidget {
         const Positioned(
           top: 10,
           left: 10,
-          child: Hero(
-            tag: 'profile',
-            child: CircleAvatar(
-              backgroundColor: smLightPink,
-              backgroundImage: AssetImage(
-                'assets/images/student_management/profile.png',
-              ),
-              radius: 43,
+          child: CircleAvatar(
+            backgroundColor: smLightPink,
+            backgroundImage: AssetImage(
+              'assets/images/student_management/profile.png',
             ),
+            radius: 43,
           ),
         ),
       ],

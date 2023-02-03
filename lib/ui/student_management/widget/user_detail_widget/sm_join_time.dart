@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../theme/color_theme.dart';
 
@@ -15,12 +16,14 @@ class SmJoinTime extends StatelessWidget {
           decoration: const BoxDecoration(
             color: Color(0xffc5cce9),
             borderRadius: BorderRadius.all(
-              Radius.circular(
-                16.0,
-              ),
+              Radius.circular(16.0),
             ),
           ),
-        ),
+        ).animate().fade().slideY(
+              begin: -0.2,
+              duration: 850.ms,
+              curve: Curves.easeInCubic,
+            ),
         const SizedBox(width: 25.0),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -42,7 +45,12 @@ class SmJoinTime extends StatelessWidget {
               ),
             ),
           ],
-        ),
+        ).animate().fade().slideX(
+              begin: -0.2,
+              delay: 250.ms,
+              duration: 600.ms,
+              curve: Curves.easeInCubic,
+            ),
       ],
     );
   }
