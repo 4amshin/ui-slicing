@@ -1,38 +1,50 @@
 import 'package:flutter/material.dart';
 
-import 'sm_home_tab_bar_item.dart';
-
-class SmHomeTabBar extends StatelessWidget {
+class SmHomeTabBar extends StatefulWidget {
   const SmHomeTabBar({Key? key}) : super(key: key);
 
   @override
+  State<SmHomeTabBar> createState() => _SmHomeTabBarState();
+}
+
+class _SmHomeTabBarState extends State<SmHomeTabBar>
+    with TickerProviderStateMixin {
+  @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 30,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        physics: const BouncingScrollPhysics(),
-        children: const [
-          SmHomeTabBarItem(
-            text: 'All',
-            width: 50,
-          ),
-          SizedBox(width: 15.0),
-          SmHomeTabBarItem(
-            text: 'Popular',
-            textColor: Colors.white54,
-            width: 90,
-            backgroundColor: Colors.transparent,
-          ),
-          SizedBox(width: 15.0),
-          SmHomeTabBarItem(
-            text: 'Recommended',
-            textColor: Colors.white54,
-            width: 140,
-            backgroundColor: Colors.transparent,
-          ),
-        ],
+    TabController _controller = TabController(
+      length: 4,
+      vsync: this,
+    );
+    return TabBar(
+      controller: _controller,
+      dividerColor: Colors.transparent,
+      indicatorColor: Colors.white,
+      indicatorSize: TabBarIndicatorSize.tab,
+      indicator: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.white,
       ),
+      indicatorPadding: const EdgeInsets.symmetric(
+        horizontal: 5,
+        vertical: 10,
+      ),
+      isScrollable: true,
+      unselectedLabelColor: Colors.white54,
+      labelColor: Colors.indigo,
+      tabs: const [
+        Tab(
+          text: 'All',
+        ),
+        Tab(
+          text: 'Popular',
+        ),
+        Tab(
+          text: 'Recommend',
+        ),
+        Tab(
+          text: 'Favorite',
+        ),
+      ],
     );
   }
 }

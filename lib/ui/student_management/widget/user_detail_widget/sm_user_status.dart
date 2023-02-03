@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/color_theme.dart';
+
 class SmUserStatus extends StatelessWidget {
   const SmUserStatus({Key? key}) : super(key: key);
 
@@ -13,7 +15,7 @@ class SmUserStatus extends StatelessWidget {
           style: TextStyle(
             fontSize: 35.0,
             fontWeight: FontWeight.w900,
-            color: Color(0xff1339a4),
+            color: smPrimary,
           ),
         ),
         Text(

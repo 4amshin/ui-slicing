@@ -30,7 +30,7 @@ class SmLessonItem extends StatelessWidget {
       decoration: BoxDecoration(
         color: backgroundColor ?? Colors.indigo,
         borderRadius: const BorderRadius.all(
-          Radius.circular(20),
+          Radius.circular(25),
         ),
       ),
       child: Column(

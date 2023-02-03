@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../../theme/color_theme.dart';
+
 class SmSignOut extends StatelessWidget {
   const SmSignOut({Key? key}) : super(key: key);
 
@@ -18,7 +20,7 @@ class SmSignOut extends StatelessWidget {
           "Sign Out",
           style: TextStyle(
             fontSize: 13.0,
-            color: Color(0xff1339a4),
+            color: smPrimary,
             fontWeight: FontWeight.bold,
           ),
         ),

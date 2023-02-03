@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/color_theme.dart';
 import 'sm_lesson_list.dart';
 
 class SmBottomContent extends StatelessWidget {
@@ -14,7 +15,7 @@ class SmBottomContent extends StatelessWidget {
           "Complete Profile",
           style: TextStyle(
             fontSize: 15,
-            color: Color(0xff1339a4),
+            color: smPrimary,
             fontWeight: FontWeight.bold,
           ),
         ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/color_theme.dart';
+
 class SmJoinTime extends StatelessWidget {
   const SmJoinTime({Key? key}) : super(key: key);
 
@@ -25,13 +27,16 @@ class SmJoinTime extends StatelessWidget {
           children: const [
             Text(
               "Joined",
-              style: TextStyle(fontSize: 12, color: Color(0xffc0c3c8)),
+              style: TextStyle(
+                fontSize: 12,
+                color: Colors.grey,
+              ),
             ),
             SizedBox(height: 8),
             Text(
               "7 mon ago",
               style: TextStyle(
-                color: Color(0xff1339a4),
+                color: smPrimary,
                 fontSize: 14,
                 fontWeight: FontWeight.w600,
               ),

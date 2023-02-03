@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/color_theme.dart';
+
 class SmAppBar extends StatelessWidget {
   const SmAppBar({Key? key}) : super(key: key);
 
@@ -12,13 +14,13 @@ class SmAppBar extends StatelessWidget {
           onPressed: () => Navigator.pop(context),
           icon: const Icon(
             Icons.arrow_back_ios,
-            color: Color(0xff1339a4),
+            color: smPrimary,
             size: 20,
           ),
         ),
         const Icon(
           Icons.more_horiz,
-          color: Color(0xff1339a4),
+          color: smPrimary,
           size: 25,
         ),
       ],
