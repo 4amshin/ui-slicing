@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:ui_slicing/ui/student_management/theme/color_theme.dart';
 import 'package:ui_slicing/ui/student_management/widget/home_page_widget/sm_home_item_card.dart';
 
 import '../../model/lesson_item.dart';
@@ -9,13 +10,13 @@ class SmHomeLessonList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      bottom: 0,
-      left: 0,
-      right: 0,
+    return Expanded(
       child: Container(
-        height: 448,
-        padding: const EdgeInsets.all(25),
+        padding: const EdgeInsets.only(
+          top: 25,
+          left: 25,
+          right: 25,
+        ),
         decoration: const BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.only(
@@ -33,7 +34,7 @@ class SmHomeLessonList extends StatelessWidget {
                   "Your Courses",
                   style: TextStyle(
                     fontSize: 15,
-                    color: Color(0xff1339a4),
+                    color: smPrimary,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -41,7 +42,7 @@ class SmHomeLessonList extends StatelessWidget {
                   "View All",
                   style: TextStyle(
                     fontSize: 13,
-                    color: Color(0xfff1d0d7),
+                    color: smLightPink,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
@@ -56,22 +57,25 @@ class SmHomeLessonList extends StatelessWidget {
                 physics: const BouncingScrollPhysics(),
                 crossAxisCount: 2,
                 childAspectRatio: 0.78,
-                children: List.generate(lessons.length, (index) {
-                  LessonItem item = lessons[index];
-                  return SmHomeItemCard(
-                    backgroundColor: item.backgroundColor,
-                    iconAsset: item.iconAsset,
-                    title: item.title,
-                    subTitle: item.subTitle,
-                    titleColor: item.titleColor,
-                    subTitleColor: item.subTitleColor,
-                    progressPercent: item.progress,
-                    progressColor: item.progressBarColor,
-                  ).animate().fade(duration: 850.ms).slideY(
-                        begin: 0.5,
-                        curve: Curves.easeInOutCubic,
-                      );
-                }),
+                children: List.generate(
+                  lessons.length,
+                  (index) {
+                    LessonItem item = lessons[index];
+                    return SmHomeItemCard(
+                      backgroundColor: item.backgroundColor,
+                      iconAsset: item.iconAsset,
+                      title: item.title,
+                      subTitle: item.subTitle,
+                      titleColor: item.titleColor,
+                      subTitleColor: item.subTitleColor,
+                      progressPercent: item.progress,
+                      progressColor: item.progressBarColor,
+                    ).animate().fade(duration: 850.ms).slideY(
+                          begin: 0.5,
+                          curve: Curves.easeInOutCubic,
+                        );
+                  },
+                ),
               ),
             ),
           ],

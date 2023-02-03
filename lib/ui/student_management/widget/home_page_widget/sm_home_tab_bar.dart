@@ -24,9 +24,11 @@ class _SmHomeTabBarState extends State<SmHomeTabBar>
         borderRadius: BorderRadius.circular(20),
         color: Colors.white,
       ),
-      indicatorPadding: const EdgeInsets.symmetric(
-        horizontal: 5,
-        vertical: 10,
+      indicatorPadding: const EdgeInsets.only(
+        left: 5,
+        right: 5,
+        bottom: 11,
+        top: 10,
       ),
       isScrollable: true,
       unselectedLabelColor: Colors.white54,

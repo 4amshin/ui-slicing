@@ -9,55 +9,49 @@ class SmHomeTopContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: 0,
-      left: 0,
-      right: 0,
-      child: Padding(
-        padding: const EdgeInsets.all(25),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SmHomeAppBar().animate().fade().slideY(
-                  duration: 850.ms,
-                  begin: -0.5,
-                  curve: Curves.easeInOutCubic,
+    return Padding(
+      padding: const EdgeInsets.all(25),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SmHomeAppBar().animate().fade().slideY(
+                duration: 850.ms,
+                begin: -0.5,
+                curve: Curves.easeInOutCubic,
+              ),
+          const SizedBox(height: 30),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text(
+                "Category",
+                style: TextStyle(
+                  fontSize: 20.0,
+                  color: Colors.white,
+                  letterSpacing: 1.5,
+                  fontWeight: FontWeight.bold,
                 ),
-            const SizedBox(height: 35.0),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                Text(
-                  "Category",
-                  style: TextStyle(
-                    fontSize: 20.0,
-                    color: Colors.white,
-                    letterSpacing: 1.5,
-                    fontWeight: FontWeight.bold,
-                  ),
+              ),
+              Text(
+                "Choose your desire suject!",
+                style: TextStyle(
+                  fontSize: 15.0,
+                  color: Colors.white54,
                 ),
-                Text(
-                  "Choose your desire suject!",
-                  style: TextStyle(
-                    fontSize: 15.0,
-                    color: Colors.white54,
-                  ),
-                ),
-              ],
-            ).animate().fade().slideX(
-                  duration: 850.ms,
-                  begin: -0.5,
-                  curve: Curves.easeInOutCubic,
-                ),
-            const SizedBox(height: 25.0),
-            const SmHomeTabBar().animate().fade().slideX(
-                  duration: 850.ms,
-                  begin: 0.5,
-                  curve: Curves.easeInOutCubic,
-                ),
-            const SizedBox(height: 30.0),
-          ],
-        ),
+              ),
+            ],
+          ).animate().fade().slideX(
+                duration: 850.ms,
+                begin: -0.5,
+                curve: Curves.easeInOutCubic,
+              ),
+          const SizedBox(height: 25.0),
+          const SmHomeTabBar().animate().fade().slideX(
+                duration: 850.ms,
+                begin: 0.5,
+                curve: Curves.easeInOutCubic,
+              ),
+        ],
       ),
     );
   }

@@ -17,8 +17,7 @@ class SmUserDetail extends StatelessWidget {
           vertical: 20,
           horizontal: 25,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
           children: [
             const SmAppBar().animate().fade().slideY(
                   duration: 850.ms,
