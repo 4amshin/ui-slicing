@@ -8,34 +8,37 @@ class SmUserStatus extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          "Rely",
-          style: TextStyle(
-            fontSize: 35.0,
-            fontWeight: FontWeight.w900,
-            color: smPrimary,
-          ),
-        ).animate().fade().slideX(
-              begin: -1,
-              duration: 850.ms,
-              curve: Curves.easeInCubic,
+    return RepaintBoundary(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            "Rely",
+            style: TextStyle(
+              fontSize: 35.0,
+              fontWeight: FontWeight.w900,
+              color: smPrimary,
             ),
-        Text(
-          "Student",
-          style: TextStyle(
-            fontSize: 33.0,
-            fontWeight: FontWeight.w500,
-            color: Colors.grey[600],
-          ),
-        ).animate().fade().slideX(
-            begin: -1,
-            delay: 150.ms,
-            duration: 650.ms,
-            curve: Curves.easeInCubic),
-      ],
+          ).animate().fade().slideX(
+                begin: -1,
+                duration: 850.ms,
+                curve: Curves.easeInCubic,
+              ),
+          Text(
+            "Student",
+            style: TextStyle(
+              fontSize: 33.0,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey[600],
+            ),
+          ).animate().fade().slideX(
+                begin: -1,
+                delay: 150.ms,
+                duration: 650.ms,
+                curve: Curves.easeInCubic,
+              ),
+        ],
+      ),
     );
   }
 }

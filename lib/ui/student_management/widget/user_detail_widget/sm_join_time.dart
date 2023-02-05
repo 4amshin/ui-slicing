@@ -19,7 +19,7 @@ class SmJoinTime extends StatelessWidget {
               Radius.circular(16.0),
             ),
           ),
-        ).animate().fade().slideY(
+        ).animate().fadeIn(duration: 850.ms).slideY(
               begin: -0.2,
               duration: 850.ms,
               curve: Curves.easeInCubic,

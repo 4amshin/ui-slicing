@@ -20,124 +20,23 @@ class _TestSiteState extends State<TestSite> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xff1339a4),
-      body: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(25),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SmHomeAppBar().animate().fade().slideY(
-                      duration: 850.ms,
-                      begin: -0.5,
-                      curve: Curves.easeInOutCubic,
-                    ),
-                const SizedBox(height: 35.0),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      "Category",
-                      style: TextStyle(
-                        fontSize: 20.0,
-                        color: Colors.white,
-                        letterSpacing: 1.5,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      "Choose your desire suject!",
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        color: Colors.white54,
-                      ),
-                    ),
-                  ],
-                ).animate().fade().slideX(
-                      duration: 850.ms,
-                      begin: -0.5,
-                      curve: Curves.easeInOutCubic,
-                    ),
-                const SizedBox(height: 25.0),
-                const SmHomeTabBar().animate().fade().slideX(
-                      duration: 850.ms,
-                      begin: 0.5,
-                      curve: Curves.easeInOutCubic,
-                    ),
-              ],
-            ),
+      appBar: AppBar(
+        backgroundColor: Colors.indigo,
+        centerTitle: true,
+        title: const Text(
+          "Test Site",
+          style: TextStyle(
+            color: Colors.white,
           ),
-          Expanded(
-            child: Container(
-              padding: const EdgeInsets.only(
-                top: 25,
-                left: 25,
-                right: 25,
-              ),
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(35),
-                  topRight: Radius.circular(35),
-                ),
-              ),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: const [
-                      Text(
-                        "Your Courses",
-                        style: TextStyle(
-                          fontSize: 15,
-                          color: smPrimary,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                      Text(
-                        "View All",
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: smLightPink,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  ).animate().fade(duration: 850.ms).slideY(
-                        begin: -0.5,
-                        curve: Curves.easeInOutCubic,
-                      ),
-                  const SizedBox(height: 10.0),
-                  Expanded(
-                    child: GridView.count(
-                      physics: const BouncingScrollPhysics(),
-                      crossAxisCount: 2,
-                      childAspectRatio: 0.78,
-                      children: List.generate(lessons.length, (index) {
-                        LessonItem item = lessons[index];
-                        return SmHomeItemCard(
-                          backgroundColor: item.backgroundColor,
-                          iconAsset: item.iconAsset,
-                          title: item.title,
-                          subTitle: item.subTitle,
-                          titleColor: item.titleColor,
-                          subTitleColor: item.subTitleColor,
-                          progressPercent: item.progress,
-                          progressColor: item.progressBarColor,
-                        ).animate().fade(duration: 850.ms).slideY(
-                              begin: 0.5,
-                              curve: Curves.easeInOutCubic,
-                            );
-                      }),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+        ),
+      ),
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.all(10.0),
+          child: Column(
+            children: const [],
           ),
-        ],
+        ),
       ),
     );
   }

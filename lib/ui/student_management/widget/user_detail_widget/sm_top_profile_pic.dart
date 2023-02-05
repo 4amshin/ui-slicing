@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 
 import '../../theme/color_theme.dart';
@@ -17,7 +18,11 @@ class SmTopProfilePic extends StatelessWidget {
           percent: 0.65,
           backgroundColor: Colors.transparent,
           progressColor: smLightPink,
-        ),
+        ).animate().rotate(
+              duration: 850.ms,
+              curve: Curves.easeInOutCubic,
+              begin: -0.2,
+            ),
         const Positioned(
           top: 10,
           left: 10,

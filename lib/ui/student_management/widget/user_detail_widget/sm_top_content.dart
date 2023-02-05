@@ -9,16 +9,21 @@ class SmTopContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        const SmTopProfilePic().animate().fade().slideX(
-              begin: -0.5,
-              duration: 850.ms,
-              curve: Curves.easeInCubic,
-            ),
-        const SizedBox(width: 65.0),
-        const SmJoinTime(),
-      ],
+    return RepaintBoundary(
+      child: Row(
+        children: [
+          const SmTopProfilePic().animate().fade().slideX(
+                begin: -0.5,
+                duration: 850.ms,
+                curve: Curves.easeInCubic,
+              ),
+          const SizedBox(width: 65.0),
+          const SmJoinTime(),
+        ],
+      ).animate().shimmer(
+            delay: 850.ms,
+            duration: 850.ms,
+          ),
     );
   }
 }

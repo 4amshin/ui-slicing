@@ -12,31 +12,35 @@ class SmBottomContent extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const Text(
-          "Complete Profile",
-          style: TextStyle(
-            fontSize: 15,
-            color: smPrimary,
-            fontWeight: FontWeight.bold,
-          ),
-        ).animate().fade().slideY(
-              begin: -0.5,
-              duration: 850.ms,
-              curve: Curves.easeInOutCubic,
+        RepaintBoundary(
+          child: const Text(
+            "Complete Profile",
+            style: TextStyle(
+              fontSize: 15,
+              color: smPrimary,
+              fontWeight: FontWeight.bold,
             ),
+          ).animate().fade().slideY(
+                begin: -0.5,
+                duration: 850.ms,
+                curve: Curves.easeInOutCubic,
+              ),
+        ),
         const SizedBox(height: 15),
-        const SmLessonList()
-            .animate()
-            .fade()
-            .slideX(
-              begin: -0.5,
-              duration: 850.ms,
-              curve: Curves.easeInOutCubic,
-            )
-            .shimmer(
-              delay: 850.ms,
-              duration: 850.ms,
-            ),
+        RepaintBoundary(
+          child: const SmLessonList()
+              .animate()
+              .fade()
+              .slideX(
+                begin: -0.5,
+                duration: 850.ms,
+                curve: Curves.easeInOutCubic,
+              )
+              .shimmer(
+                delay: 850.ms,
+                duration: 850.ms,
+              ),
+        ),
       ],
     );
   }

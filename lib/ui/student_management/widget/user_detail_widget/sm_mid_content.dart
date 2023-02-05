@@ -14,10 +14,22 @@ class SmMidContent extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         const SmUserStatus(),
-        const SmLessonFilter().animate().shimmer(
-              delay: 850.ms,
-              duration: 850.ms,
-            ),
+        RepaintBoundary(
+          child: const SmLessonFilter()
+              .animate()
+              .fadeIn(
+                duration: 850.ms,
+              )
+              .slideY(
+                begin: 0.2,
+                duration: 850.ms,
+                curve: Curves.easeInOutCubic,
+              )
+              .shimmer(
+                delay: 850.ms,
+                duration: 850.ms,
+              ),
+        ),
       ],
     );
   }

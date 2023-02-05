@@ -11,47 +11,49 @@ class SmHomeTopContent extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(25),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const SmHomeAppBar().animate().fade().slideY(
-                duration: 850.ms,
-                begin: -0.5,
-                curve: Curves.easeInOutCubic,
-              ),
-          const SizedBox(height: 30),
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: const [
-              Text(
-                "Category",
-                style: TextStyle(
-                  fontSize: 20.0,
-                  color: Colors.white,
-                  letterSpacing: 1.5,
-                  fontWeight: FontWeight.bold,
+      child: RepaintBoundary(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const SmHomeAppBar().animate().fade().slideY(
+                  duration: 850.ms,
+                  begin: -0.5,
+                  curve: Curves.easeInOutCubic,
                 ),
-              ),
-              Text(
-                "Choose your desire suject!",
-                style: TextStyle(
-                  fontSize: 15.0,
-                  color: Colors.white54,
+            const SizedBox(height: 30),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: const [
+                Text(
+                  "Category",
+                  style: TextStyle(
+                    fontSize: 20.0,
+                    color: Colors.white,
+                    letterSpacing: 1.5,
+                    fontWeight: FontWeight.bold,
+                  ),
                 ),
-              ),
-            ],
-          ).animate().fade().slideX(
-                duration: 850.ms,
-                begin: -0.5,
-                curve: Curves.easeInOutCubic,
-              ),
-          const SizedBox(height: 25.0),
-          const SmHomeTabBar().animate().fade().slideX(
-                duration: 850.ms,
-                begin: 0.5,
-                curve: Curves.easeInOutCubic,
-              ),
-        ],
+                Text(
+                  "Choose your desire suject!",
+                  style: TextStyle(
+                    fontSize: 15.0,
+                    color: Colors.white54,
+                  ),
+                ),
+              ],
+            ).animate().fade().slideX(
+                  duration: 850.ms,
+                  begin: -0.5,
+                  curve: Curves.easeInOutCubic,
+                ),
+            const SizedBox(height: 25.0),
+            const SmHomeTabBar().animate().fade().slideX(
+                  duration: 850.ms,
+                  begin: 0.5,
+                  curve: Curves.easeInOutCubic,
+                ),
+          ],
+        ),
       ),
     );
   }

@@ -24,61 +24,63 @@ class SmHomeLessonList extends StatelessWidget {
             topRight: Radius.circular(35),
           ),
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                Text(
-                  "Your Courses",
-                  style: TextStyle(
-                    fontSize: 15,
-                    color: smPrimary,
-                    fontWeight: FontWeight.bold,
+        child: RepaintBoundary(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: const [
+                  Text(
+                    "Your Courses",
+                    style: TextStyle(
+                      fontSize: 15,
+                      color: smPrimary,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-                Text(
-                  "View All",
-                  style: TextStyle(
-                    fontSize: 13,
-                    color: smLightPink,
-                    fontWeight: FontWeight.bold,
+                  Text(
+                    "View All",
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: smLightPink,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
-                ),
-              ],
-            ).animate().fade(duration: 850.ms).slideY(
-                  begin: -0.5,
-                  curve: Curves.easeInOutCubic,
-                ),
-            const SizedBox(height: 10.0),
-            Expanded(
-              child: GridView.count(
-                physics: const BouncingScrollPhysics(),
-                crossAxisCount: 2,
-                childAspectRatio: 0.78,
-                children: List.generate(
-                  lessons.length,
-                  (index) {
-                    LessonItem item = lessons[index];
-                    return SmHomeItemCard(
-                      backgroundColor: item.backgroundColor,
-                      iconAsset: item.iconAsset,
-                      title: item.title,
-                      subTitle: item.subTitle,
-                      titleColor: item.titleColor,
-                      subTitleColor: item.subTitleColor,
-                      progressPercent: item.progress,
-                      progressColor: item.progressBarColor,
-                    ).animate().fade(duration: 850.ms).slideY(
-                          begin: 0.5,
-                          curve: Curves.easeInOutCubic,
-                        );
-                  },
+                ],
+              ).animate().fade(duration: 850.ms).slideY(
+                    begin: -0.5,
+                    curve: Curves.easeInOutCubic,
+                  ),
+              const SizedBox(height: 10.0),
+              Expanded(
+                child: GridView.count(
+                  physics: const BouncingScrollPhysics(),
+                  crossAxisCount: 2,
+                  childAspectRatio: 0.78,
+                  children: List.generate(
+                    lessons.length,
+                    (index) {
+                      LessonItem item = lessons[index];
+                      return SmHomeItemCard(
+                        backgroundColor: item.backgroundColor,
+                        iconAsset: item.iconAsset,
+                        title: item.title,
+                        subTitle: item.subTitle,
+                        titleColor: item.titleColor,
+                        subTitleColor: item.subTitleColor,
+                        progressPercent: item.progress,
+                        progressColor: item.progressBarColor,
+                      ).animate().fade(duration: 850.ms).slideY(
+                            begin: 0.5,
+                            curve: Curves.easeInOutCubic,
+                          );
+                    },
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
