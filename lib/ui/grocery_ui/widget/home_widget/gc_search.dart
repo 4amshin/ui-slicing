@@ -21,7 +21,7 @@ class GcSearch extends StatelessWidget {
                 horizontal: 15,
               ),
               decoration: BoxDecoration(
-                color: Colors.grey[100],
+                color: gcBlueGrey,
                 borderRadius: const BorderRadius.all(
                   Radius.circular(12),
                 ),
@@ -55,7 +55,7 @@ class GcSearch extends StatelessWidget {
                 top: 6,
               ),
               decoration: BoxDecoration(
-                color: Colors.grey[100],
+                color: gcBlueGrey,
                 borderRadius: const BorderRadius.all(
                   Radius.circular(12),
                 ),
