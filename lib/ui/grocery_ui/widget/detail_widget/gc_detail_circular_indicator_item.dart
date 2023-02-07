@@ -51,9 +51,9 @@ class GcDetailCircularIndicatorItem extends StatelessWidget {
         Text(
           title ?? "Protein",
           style: TextStyle(
-            fontSize: 13,
+            fontSize: 12,
             color: gcIconGrey,
-            fontWeight: FontWeight.bold,
+            // fontWeight: FontWeight.bold,
           ),
         ),
       ],

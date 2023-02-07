@@ -11,9 +11,9 @@ class GcDetailMidLine extends StatelessWidget {
       margin: const EdgeInsets.symmetric(
         horizontal: 115,
       ),
-      decoration: BoxDecoration(
-        color: gcIconGrey,
-        borderRadius: const BorderRadius.all(
+      decoration: const BoxDecoration(
+        color: gcMediumGrey,
+        borderRadius: BorderRadius.all(
           Radius.circular(16.0),
         ),
       ),

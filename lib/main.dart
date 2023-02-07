@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ui_slicing/anim_test.dart';
 import 'package:ui_slicing/screen_size.dart';
 import 'package:ui_slicing/test_site.dart';
+import 'package:ui_slicing/ui/grocery_ui/view/gc_chart_checkout.dart';
 import 'package:ui_slicing/ui/grocery_ui/view/gc_detail_page.dart';
 import 'package:ui_slicing/ui/grocery_ui/view/gc_home_page.dart';
 import 'ui/student_management/view/sm_home_page.dart';
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const GcDetailPage(),
+      home: const GcChartCheckout(),
     );
   }
 }

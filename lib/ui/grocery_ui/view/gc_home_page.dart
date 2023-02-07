@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ui_slicing/ui/grocery_ui/model/fruits.dart';
 import 'package:ui_slicing/ui/grocery_ui/model/vegetables.dart';
+import 'package:ui_slicing/ui/grocery_ui/theme/color_theme.dart';
 import 'package:ui_slicing/ui/grocery_ui/widget/home_widget/gc_home_app_bar.dart';
 import 'package:ui_slicing/ui/grocery_ui/widget/home_widget/gc_search.dart';
 
@@ -13,7 +14,7 @@ class GcHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 236, 246, 253),
+      backgroundColor: gcBackgroundColor,
       body: SafeArea(
         minimum: const EdgeInsets.all(20),
         child: ListView(

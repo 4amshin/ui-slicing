@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+const gcBackgroundColor = Color.fromARGB(255, 236, 246, 253);
 const gcLightGreen = Color.fromARGB(255, 205, 244, 227);
 const gcMediumGreen = Color(0xffddfae8);
 const gcGreen = Color(0xff53b175);

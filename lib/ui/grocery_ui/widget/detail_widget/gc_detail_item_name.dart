@@ -19,7 +19,7 @@ class GcDetailItemName extends StatelessWidget {
         ),
         SizedBox(height: 5),
         GcDetailRatingRow(),
-        SizedBox(height: 10.0),
+        SizedBox(height: 15),
         Text(
           "The banana pulp contains minerals and vitamins useful and necessary for the human body: vitamins of group B, E, C.",
           style: TextStyle(

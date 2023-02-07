@@ -20,7 +20,7 @@ class GcDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 236, 246, 253),
+        backgroundColor: gcBackgroundColor,
         body: ListView(
           children: const [
             SizedBox(height: 25.0),
