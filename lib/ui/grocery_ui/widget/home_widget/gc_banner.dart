@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:ui_slicing/ui/grocery_ui/theme/color_theme.dart';
 
 class GcBanner extends StatelessWidget {
@@ -39,7 +40,15 @@ class GcBanner extends StatelessWidget {
                   ),
                 ),
               ],
-            ),
+            )
+                .animate()
+                .fade(
+                  duration: 850.ms,
+                )
+                .slideY(
+                  begin: -0.3,
+                  duration: 850.ms,
+                ),
           ),
           const Positioned(
             right: -13,
@@ -49,6 +58,14 @@ class GcBanner extends StatelessWidget {
               image: AssetImage('assets/images/grocery/banner.png'),
             ),
           )
+              .animate()
+              .fade(
+                duration: 850.ms,
+              )
+              .slideY(
+                begin: 0.3,
+                duration: 850.ms,
+              ),
         ],
       ),
     );

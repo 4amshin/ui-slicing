@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import '../../theme/color_theme.dart';
 
 class GcDetailPriceRow extends StatelessWidget {
-  const GcDetailPriceRow({Key? key}) : super(key: key);
+  final String? price;
+  const GcDetailPriceRow({
+    Key? key,
+    this.price,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,9 +23,9 @@ class GcDetailPriceRow extends StatelessWidget {
             color: gcLightGreen,
             borderRadius: BorderRadius.circular(25),
           ),
-          child: const Text(
-            '\$4.99',
-            style: TextStyle(
+          child: Text(
+            '\$$price',
+            style: const TextStyle(
               fontSize: 15.0,
               color: gcGreen,
               fontWeight: FontWeight.bold,

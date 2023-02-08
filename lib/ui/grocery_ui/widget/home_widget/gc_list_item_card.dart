@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../../theme/color_theme.dart';
 
@@ -37,15 +38,22 @@ class _GcListItemCardState extends State<GcListItemCard> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: 80,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(
-                  'assets/images/grocery/${widget.imgAsset}',
+          Hero(
+            tag: widget.name!,
+            child: Container(
+              height: 80,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    'assets/images/grocery/${widget.imgAsset}',
+                  ),
                 ),
               ),
-            ),
+            ).animate().shake(
+                  // delay: 500.ms,
+                  hz: 2,
+                  duration: 400.ms,
+                ),
           ),
           Text(
             widget.name ?? 'Title',

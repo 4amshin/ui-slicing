@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:ui_slicing/ui/grocery_ui/widget/chart_widget/gc_chart_item_image.dart';
 import 'package:ui_slicing/ui/grocery_ui/widget/chart_widget/gc_chart_item_price.dart';
 
@@ -59,7 +60,11 @@ class GcChartItem extends StatelessWidget {
             price: price ?? '8.98',
           ),
         ],
-      ),
+      ).animate().fade().slideX(
+            begin: 0.25,
+            duration: 850.ms,
+            curve: Curves.fastOutSlowIn,
+          ),
     );
   }
 }
