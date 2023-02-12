@@ -69,7 +69,6 @@ class GcDetailPage extends StatelessWidget {
       backgroundColor: gcBackgroundColor,
       body: ListView(
         children: [
-          const SizedBox(height: 15),
           GcDetailTopContent(
             tag: item.name,
             imgAsset: item.imgAsset,

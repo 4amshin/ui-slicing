@@ -29,6 +29,7 @@ environment:
 # versions available, run `flutter pub outdated`.
 dependencies:
   cupertino_icons: ^1.0.2
+  flashy_tab_bar2: ^0.0.6
   flutter:
     sdk: flutter
   flutter_animate: ^3.1.0

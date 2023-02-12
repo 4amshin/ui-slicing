@@ -2,13 +2,19 @@ import 'package:flutter/material.dart';
 
 import '../../theme/color_theme.dart';
 
-class GcDetailPriceRow extends StatelessWidget {
+class GcDetailPriceRow extends StatefulWidget {
   final String? price;
   const GcDetailPriceRow({
     Key? key,
     this.price,
   }) : super(key: key);
 
+  @override
+  State<GcDetailPriceRow> createState() => _GcDetailPriceRowState();
+}
+
+class _GcDetailPriceRowState extends State<GcDetailPriceRow> {
+  bool isFavorite = false;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -24,7 +30,7 @@ class GcDetailPriceRow extends StatelessWidget {
             borderRadius: BorderRadius.circular(25),
           ),
           child: Text(
-            '\$$price',
+            '\$${widget.price}',
             style: const TextStyle(
               fontSize: 15.0,
               color: gcGreen,
@@ -32,19 +38,32 @@ class GcDetailPriceRow extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          height: 35,
-          width: 35,
-          decoration: const BoxDecoration(
-            color: gcLightRed,
-            borderRadius: BorderRadius.all(
-              Radius.circular(10),
+        GestureDetector(
+          onTap: () {
+            setState(() {
+              isFavorite = !isFavorite;
+            });
+          },
+          child: Container(
+            height: 35,
+            width: 35,
+            decoration: const BoxDecoration(
+              color: gcLightRed,
+              borderRadius: BorderRadius.all(
+                Radius.circular(10),
+              ),
             ),
-          ),
-          child: const Icon(
-            Icons.favorite,
-            color: Colors.red,
-            size: 18,
+            child: isFavorite
+                ? const Icon(
+                    Icons.favorite,
+                    color: Colors.red,
+                    size: 18,
+                  )
+                : const Icon(
+                    Icons.favorite_outline,
+                    color: Colors.red,
+                    size: 18,
+                  ),
           ),
         ),
       ],

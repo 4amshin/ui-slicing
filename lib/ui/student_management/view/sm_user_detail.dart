@@ -26,7 +26,7 @@ class SmUserDetail extends StatelessWidget {
             SmMidContent(),
             SizedBox(height: 40),
             SmBottomContent(),
-            SizedBox(height: 50),
+            SizedBox(height: 80),
             SmSignOut(),
           ],
         ),

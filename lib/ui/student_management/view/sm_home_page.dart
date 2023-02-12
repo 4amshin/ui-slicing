@@ -12,6 +12,7 @@ class SmHomePage extends StatelessWidget {
       backgroundColor: smPrimary,
       body: Column(
         children: const [
+          SizedBox(height: 20.0),
           SmHomeTopContent(),
           SmHomeLessonList(),
         ],

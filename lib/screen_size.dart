@@ -33,7 +33,7 @@ class ScreenSize extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '${MediaQuery.of(context).size.width.toInt().toString()} (333)',
+                  '${MediaQuery.of(context).size.width.toInt().toString()} (360)',
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,
@@ -52,7 +52,7 @@ class ScreenSize extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '${MediaQuery.of(context).size.height.toInt().toString()} (740)',
+                  '${MediaQuery.of(context).size.height.toInt().toString()} (756)',
                   style: const TextStyle(
                     fontSize: 20,
                     fontWeight: FontWeight.bold,

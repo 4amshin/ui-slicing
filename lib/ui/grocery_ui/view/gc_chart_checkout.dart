@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:ui_slicing/ui/grocery_ui/theme/color_theme.dart';
+import 'package:ui_slicing/ui/grocery_ui/view/gc_home_page.dart';
 import 'package:ui_slicing/ui/grocery_ui/widget/chart_widget/gc_chart_checkout_button.dart';
 import 'package:ui_slicing/ui/grocery_ui/widget/detail_widget/gc_detail_add_button.dart';
 
@@ -30,7 +31,10 @@ class GcChartCheckout extends StatelessWidget {
             ),
         leading: IconButton(
           onPressed: () {
-            Navigator.pop(context);
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => const GcHomePage()),
+            );
           },
           icon: Icon(
             Icons.arrow_back_ios,

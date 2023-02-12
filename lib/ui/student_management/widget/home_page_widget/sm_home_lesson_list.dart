@@ -52,7 +52,6 @@ class SmHomeLessonList extends StatelessWidget {
                     begin: -0.5,
                     curve: Curves.easeInOutCubic,
                   ),
-              const SizedBox(height: 10.0),
               Expanded(
                 child: GridView.count(
                   physics: const BouncingScrollPhysics(),

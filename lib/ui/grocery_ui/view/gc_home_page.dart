@@ -25,6 +25,7 @@ class GcHomePage extends StatelessWidget {
           child: ListView(
             physics: const BouncingScrollPhysics(),
             children: [
+              const SizedBox(height: 10.0),
               const GcHomeAppBar()
                   .animate()
                   .fade(
