@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:ui_slicing/ui/barber_ui/view/home/br_home_hairstyle_option.dart';
 
 class BrHomeViewMoreButton extends StatelessWidget {
-  const BrHomeViewMoreButton({Key? key}) : super(key: key);
+  final String? title;
+  const BrHomeViewMoreButton({
+    Key? key,
+    this.title,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +16,14 @@ class BrHomeViewMoreButton extends StatelessWidget {
         horizontal: 10,
       ),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const BrHomeHairstyleOption(),
+            ),
+          );
+        },
         style: FilledButton.styleFrom(
           backgroundColor: Colors.indigoAccent[100],
           elevation: 0,
@@ -19,9 +31,9 @@ class BrHomeViewMoreButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(15),
           ),
         ),
-        child: const Text(
-          "View More",
-          style: TextStyle(
+        child: Text(
+          title ?? "View More",
+          style: const TextStyle(
             fontSize: 15.0,
             color: Colors.white,
             // fontWeight: FontWeight.bold,

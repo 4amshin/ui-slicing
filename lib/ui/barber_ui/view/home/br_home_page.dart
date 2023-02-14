@@ -3,7 +3,7 @@ import 'package:ui_slicing/ui/barber_ui/widget/br_home_widget/br_banner_list.dar
 import 'package:ui_slicing/ui/barber_ui/widget/br_home_widget/br_home_view_more_button.dart';
 import 'package:ui_slicing/ui/barber_ui/widget/br_home_widget/br_styles_option.dart';
 
-import '../widget/br_home_widget/br_home_app_bar.dart';
+import '../../widget/br_home_widget/br_home_app_bar.dart';
 
 class BrHomePage extends StatelessWidget {
   const BrHomePage({Key? key}) : super(key: key);

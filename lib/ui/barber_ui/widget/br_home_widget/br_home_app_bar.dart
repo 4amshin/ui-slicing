@@ -25,7 +25,7 @@ class BrHomeAppBar extends StatelessWidget {
                 Text(
                   "Welcome",
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 18,
                     fontWeight: FontWeight.bold,
                   ),
                 ),
