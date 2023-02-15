@@ -3,9 +3,15 @@ import 'package:ui_slicing/ui/barber_ui/model/hairstyles.dart';
 import 'package:ui_slicing/ui/barber_ui/widget/br_home_widget/br_home_hairstyles_app_bar_background.dart';
 import 'package:ui_slicing/ui/barber_ui/widget/br_home_widget/br_home_view_more_button.dart';
 
-class BrHomeHairstyleOption extends StatelessWidget {
+class BrHomeHairstyleOption extends StatefulWidget {
   const BrHomeHairstyleOption({Key? key}) : super(key: key);
 
+  @override
+  State<BrHomeHairstyleOption> createState() => _BrHomeHairstyleOptionState();
+}
+
+class _BrHomeHairstyleOptionState extends State<BrHomeHairstyleOption> {
+  bool isSelect = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,26 +73,42 @@ class BrHomeHairstyleOption extends StatelessWidget {
                 ),
                 itemBuilder: (context, index) {
                   Hairstyle data = hairstyles[index];
-                  return Padding(
-                    padding: const EdgeInsets.all(5),
-                    child: Column(
-                      children: [
-                        CircleAvatar(
-                          radius: 45,
-                          backgroundColor: Colors.indigo,
-                          backgroundImage: AssetImage(
-                            'assets/images/barber/hairstyle/${data.imgAsset}',
+                  return GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        data.isSelected = !data.isSelected;
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(5),
+                      child: Column(
+                        children: [
+                          CircleAvatar(
+                            radius: 45,
+                            backgroundColor: Colors.indigo,
+                            backgroundImage: AssetImage(
+                              'assets/images/barber/hairstyle/${data.imgAsset}',
+                            ),
+                            child: CircleAvatar(
+                              backgroundColor: data.isSelected
+                                  ? Colors.indigoAccent[100]?.withOpacity(0.6)
+                                  : Colors.transparent,
+                              radius: 45,
+                            ),
                           ),
-                        ),
-                        const SizedBox(height: 5),
-                        Text(
-                          data.title ?? 'title',
-                          style: const TextStyle(
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold,
+                          const SizedBox(height: 5),
+                          Text(
+                            data.title ?? 'title',
+                            style: TextStyle(
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold,
+                              color: data.isSelected
+                                  ? Colors.indigoAccent[100]
+                                  : Colors.black,
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   );
                 },

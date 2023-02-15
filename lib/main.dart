@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:ui_slicing/ui/barber_ui/br_navigation.dart';
-import 'package:ui_slicing/ui/barber_ui/view/home/br_home_page.dart';
 
 void main() {
   runApp(const MyApp());
