@@ -14,7 +14,7 @@ class GcChartItem extends StatelessWidget {
   final double? space;
   const GcChartItem({
     Key? key,
-    this.imgAsset,
+    required this.imgAsset,
     this.title,
     this.type,
     this.weight,
@@ -26,9 +26,12 @@ class GcChartItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 100.0,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 10,
-        vertical: 10,
+      margin: const EdgeInsets.only(bottom: 20),
+      padding: const EdgeInsets.only(
+        top: 10,
+        bottom: 10,
+        left: 10,
+        right: 15,
       ),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -45,23 +48,27 @@ class GcChartItem extends StatelessWidget {
         ),
       ),
       child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          GcChartItemImage(
-            imgAsset: imgAsset,
+          Row(
+            children: [
+              GcChartItemImage(
+                imgAsset: imgAsset,
+              ),
+              const SizedBox(width: 5),
+              GcChartItemDetail(
+                title: title,
+                type: type,
+                weight: weight,
+              ),
+            ],
           ),
-          const SizedBox(width: 5),
-          GcChartItemDetail(
-            title: title,
-            type: type,
-            weight: weight,
-          ),
-          SizedBox(width: space ?? 68),
           GcChartItemPrice(
             price: price ?? '8.98',
           ),
         ],
-      ).animate().fade().slideX(
-            begin: 0.25,
+      ).animate().fade().slideY(
+            begin: -0.25,
             duration: 850.ms,
             curve: Curves.fastOutSlowIn,
           ),

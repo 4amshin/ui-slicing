@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:ui_slicing/ui/barber_ui/br_navigation.dart';
+import 'package:ui_slicing/screen_size.dart';
+import 'package:ui_slicing/ui/grocery_ui/view/gc_home_page.dart';
+import 'package:ui_slicing/ui/grocery_ui/widget/home_widget/gc_home_app_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +23,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const BrNavigation(),
+      home: const GcHomePage(),
     );
   }
 }
